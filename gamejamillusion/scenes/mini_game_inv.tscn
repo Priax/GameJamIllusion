@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dh8ogsu84lvpn"]
+[gd_scene load_steps=17 format=3 uid="uid://dh8ogsu84lvpn"]
 
 [ext_resource type="Texture2D" uid="uid://b8445jml2mwo1" path="res://assets/sprites/world_tileset.png" id="1_6x8er"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_376jq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jfvm4u72mhl" path="res://scenes/kill_zone.tscn" id="4_5nac6"]
 [ext_resource type="FontFile" uid="uid://c01g8g7b3f2y6" path="res://assets/fonts/PixelOperator8.ttf" id="5_31aj8"]
 [ext_resource type="PackedScene" uid="uid://cqbone50ckqss" path="res://scenes/transition.tscn" id="7_oox2p"]
+[ext_resource type="Texture2D" uid="uid://b4teg8rla5fdw" path="res://assets/sprites/door.png" id="8_y46ts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usclt"]
 texture = ExtResource("1_6x8er")
@@ -176,6 +177,22 @@ sources/0 = SubResource("TileSetAtlasSource_usclt")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p570u"]
 
+[sub_resource type="GDScript" id="GDScript_3ttf1"]
+script/source = "extends AnimatableBody2D
+
+# Variable pour suivre l'état de visibilité
+var is_visible = true
+
+# Fonction appelée lorsque le Timer se déclenche
+func _on_Timer_timeout():
+	# Inverser la visibilité
+	is_visible = not is_visible
+	# Mettre à jour la visibilité du Sprite2D
+	$Sprite2D.visible = is_visible
+	# Mettre à jour la visibilité du CollisionShape2D
+	$CollisionShape2D.disabled = not is_visible
+"
+
 [sub_resource type="Animation" id="Animation_evuu1"]
 length = 0.001
 tracks/0/type = "value"
@@ -251,6 +268,7 @@ position = Vector2(343, -51)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("3_xaj4u")]
 position = Vector2(192, -11)
+script = SubResource("GDScript_3ttf1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 libraries = {
@@ -261,6 +279,7 @@ autoplay = "move"
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
+visible = false
 offset_left = -21.0
 offset_top = -43.0
 offset_right = 65.0
@@ -274,8 +293,13 @@ text = "Space to jump"
 
 [node name="Transitions" type="Node" parent="."]
 
-[node name="Door" parent="." instance=ExtResource("7_oox2p")]
+[node name="Door" parent="Transitions" instance=ExtResource("7_oox2p")]
 position = Vector2(343, -65)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/Door"]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_owx02")
+
+[node name="Sprite2D" type="Sprite2D" parent="Transitions/Door"]
+position = Vector2(1, -6)
+texture = ExtResource("8_y46ts")
