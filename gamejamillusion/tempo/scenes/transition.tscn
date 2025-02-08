@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqbone50ckqss"]
-
-[ext_resource type="Script" path="res://scripts/transition.gd" id="1_xyf8u"]
-
-[node name="Door" type="Area2D"]
-collision_mask = 2
-script = ExtResource("1_xyf8u")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
