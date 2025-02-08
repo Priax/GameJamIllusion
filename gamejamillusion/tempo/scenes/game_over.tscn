@@ -1,0 +1,180 @@
+[gd_scene load_steps=18 format=3 uid="uid://u0jhem0uhrw4"]
+
+[ext_resource type="FontFile" uid="uid://c01g8g7b3f2y6" path="res://assets/fonts/PixelOperator8.ttf" id="1_66yiq"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="2_kbnn3"]
+[ext_resource type="Texture2D" uid="uid://dlacnplyxmd0q" path="res://assets/sprites/coin.png" id="3_crmo5"]
+
+[sub_resource type="GDScript" id="GDScript_tgg87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ngd7"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8soo2"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoi67"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e334k"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr17g"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epish"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uhlw"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e42xa"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuudh"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm4xh"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt214"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0delh"]
+atlas = ExtResource("3_crmo5")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65e1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ngd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8soo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoi67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e334k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr17g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epish")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uhlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e42xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuudh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm4xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt214")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0delh")
+}],
+"loop": true,
+"name": &"heart_animation",
+"speed": 10.0
+}]
+
+[node name="GameOver" type="Node2D"]
+script = SubResource("GDScript_tgg87")
+
+[node name="GameManager" type="Node" parent="."]
+
+[node name="FinalScore" type="Label" parent="GameManager"]
+unique_name_in_owner = true
+offset_left = 350.0
+offset_top = 399.0
+offset_right = 750.0
+offset_bottom = 431.0
+theme_override_fonts/font = ExtResource("1_66yiq")
+theme_override_font_sizes/font_size = 32
+text = "Votre score: X."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_kbnn3")
+
+[node name="Health_bar" type="CanvasLayer" parent="GameManager"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameManager/Health_bar"]
+offset_left = 381.0
+offset_top = 329.0
+offset_right = 716.0
+offset_bottom = 386.0
+
+[node name="Heart" type="TextureRect" parent="GameManager/Health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="Health_one" type="AnimatedSprite2D" parent="GameManager/Health_bar/HBoxContainer/Heart"]
+position = Vector2(25, 27)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_65e1g")
+animation = &"heart_animation"
+autoplay = "heart_animation"
+
+[node name="Heart2" type="TextureRect" parent="GameManager/Health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="Health_one" type="AnimatedSprite2D" parent="GameManager/Health_bar/HBoxContainer/Heart2"]
+position = Vector2(25, 27)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_65e1g")
+animation = &"heart_animation"
+autoplay = "heart_animation"
+
+[node name="Heart3" type="TextureRect" parent="GameManager/Health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="Health_one" type="AnimatedSprite2D" parent="GameManager/Health_bar/HBoxContainer/Heart3"]
+position = Vector2(25, 27)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_65e1g")
+animation = &"heart_animation"
+autoplay = "heart_animation"
+
+[node name="Heart4" type="TextureRect" parent="GameManager/Health_bar/HBoxContainer"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="Health_one" type="AnimatedSprite2D" parent="GameManager/Health_bar/HBoxContainer/Heart4"]
+position = Vector2(25, 27)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_65e1g")
+animation = &"heart_animation"
+autoplay = "heart_animation"
+
+[node name="Button" type="Button" parent="GameManager"]
+offset_left = 435.0
+offset_top = 270.0
+offset_right = 595.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("1_66yiq")
+theme_override_font_sizes/font_size = 16
+text = "Take damage"
+
+[connection signal="pressed" from="GameManager/Button" to="GameManager/FinalScore" method="_on_button_pressed"]

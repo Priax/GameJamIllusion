@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh8ogsu84lvpn"]
+[gd_scene load_steps=4 format=3 uid="uid://7mm73mclifgd"]
 
 [ext_resource type="Script" path="res://scripts/audio_game.gd" id="1_yb4qo"]
-[ext_resource type="AudioStream" uid="uid://bdlfjrqpvrlr4" path="res://assets/sounds/Axoloto - Zaly TKKF Laïoss.mp3" id="2_2qcsm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gaare"]
 font_size = 40
@@ -15,7 +14,6 @@ font_color = Color(0, 0, 1, 1)
 script = ExtResource("1_yb4qo")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_2qcsm")
 
 [node name="test" type="Label" parent="."]
 offset_left = -72.0
