@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bded4mj88qet4"]
 
-[ext_resource type="Texture2D" uid="uid://dqaopmdo0vdrv" path="res://assets/BackGround/background_layer_1.png" id="1_er8rq"]
-[ext_resource type="Script" path="res://menu_scene.gd" id="1_o2wwo"]
-[ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/Wario Ware Fonts/warioware-inc-mega-microgame-big.ttf" id="3_tb0lo"]
+[ext_resource type="Script" path="res://scenes/menu_scene.gd" id="1_so3y1"]
+[ext_resource type="Texture2D" uid="uid://dqaopmdo0vdrv" path="res://assets/BackGround/background_layer_1.png" id="2_pqotk"]
+[ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="3_o6ehx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3k8n1"]
-texture = ExtResource("1_er8rq")
+texture = ExtResource("2_pqotk")
 modulate_color = Color(1, 1, 1, 0.431373)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dwkf"]
@@ -49,9 +49,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o2wwo")
+script = ExtResource("1_so3y1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="menuBackground" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -89,7 +89,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tb0lo")
+theme_override_fonts/font = ExtResource("3_o6ehx")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0dwkf")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_o3hwp")
@@ -105,7 +105,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tb0lo")
+theme_override_fonts/font = ExtResource("3_o6ehx")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0dwkf")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_o3hwp")
@@ -121,7 +121,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_tb0lo")
+theme_override_fonts/font = ExtResource("3_o6ehx")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0dwkf")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_o3hwp")
@@ -149,7 +149,7 @@ theme_override_constants/shadow_offset_x = 7
 theme_override_constants/shadow_offset_y = 7
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 7
-theme_override_fonts/font = ExtResource("3_tb0lo")
+theme_override_fonts/font = ExtResource("3_o6ehx")
 theme_override_font_sizes/font_size = 60
 text = "The Illusionist's Journey"
 horizontal_alignment = 1

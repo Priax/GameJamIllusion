@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=3 uid="uid://dauyrmdb4ynog"]
+
+[ext_resource type="Script" path="res://scenes/option_scene.gd" id="1_4cw0f"]
+[ext_resource type="Texture2D" uid="uid://dm6n4xxeoe85b" path="res://assets/Panel/panelOptionAssets.png" id="2_5o1xg"]
+[ext_resource type="AudioStream" uid="uid://3npi8jay2ce5" path="res://song/allez-le-noir.mp3" id="2_eghwa"]
+[ext_resource type="AudioStream" uid="uid://cx16sx3fyt7l3" path="res://song/aaaaaaaa.mp3" id="2_yx1d2"]
+[ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="3_6aa3i"]
+[ext_resource type="Texture2D" uid="uid://b4rd3hoy8rtdr" path="res://assets/Button/ButtonAssets.png" id="4_kdnib"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hpbsf"]
+texture = ExtResource("2_5o1xg")
+texture_margin_left = 26.0698
+texture_margin_top = 26.2225
+texture_margin_right = 26.092
+texture_margin_bottom = 26.2925
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+region_rect = Rect2(0, 0, 88, 88)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pr2q2"]
+texture = ExtResource("4_kdnib")
+
+[node name="OptionScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4cw0f")
+
+[node name="Allez-le-noir" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eghwa")
+
+[node name="Aaaaaaaa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yx1d2")
+bus = &"SFX"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_styles/panel = SubResource("StyleBoxTexture_hpbsf")
+tab_alignment = 1
+current_tab = 2
+tab_focus_mode = 1
+
+[node name="Graphique" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+tab_alignment = 1
+metadata/_tab_index = 0
+
+[node name="CheckFullScreen" type="CheckButton" parent="TabContainer/Graphique"]
+layout_mode = 0
+offset_left = 5.93018
+offset_top = 6.77746
+offset_right = 163.93
+offset_bottom = 59.7775
+theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_font_sizes/font_size = 16
+text = "FullScreen
+"
+alignment = 1
+
+[node name="BackButton" type="Button" parent="TabContainer/Graphique"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.908
+offset_top = -19.7075
+offset_right = 17.092
+offset_bottom = 25.2925
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pr2q2")
+text = "Back
+"
+
+[node name="Controle" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+tab_alignment = 1
+metadata/_tab_index = 1
+
+[node name="BackButton" type="Button" parent="TabContainer/Controle"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0824
+offset_top = -28.9543
+offset_right = 3.9176
+offset_bottom = 9.04572
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pr2q2")
+text = "Back
+"
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+tab_alignment = 1
+metadata/_tab_index = 2
+
+[node name="BackButton" type="Button" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0824
+offset_top = -28.9543
+offset_right = 3.9176
+offset_bottom = 9.04572
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pr2q2")
+text = "Back
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 29.0
+offset_right = 252.0
+offset_bottom = 82.0
+
+[node name="Music" type="Label" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+text = "Music
+"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="PlaySound noir" type="Button" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+text = "Play Sound noir"
+
+[node name="SFX" type="Label" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+text = "Sfx
+"
+
+[node name="HSlider2" type="HSlider" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="PlaySound aaaaa" type="Button" parent="TabContainer/Sound/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6aa3i")
+text = "Play Sound aaaaaa"
+
+[connection signal="toggled" from="TabContainer/Graphique/CheckFullScreen" to="." method="checkFullScreen"]
+[connection signal="pressed" from="TabContainer/Graphique/BackButton" to="." method="BackPresse"]
+[connection signal="pressed" from="TabContainer/Controle/BackButton" to="." method="BackPresse"]
+[connection signal="pressed" from="TabContainer/Sound/BackButton" to="." method="BackPresse"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/HSlider" to="." method="changeValueMaster"]
+[connection signal="pressed" from="TabContainer/Sound/VBoxContainer/PlaySound noir" to="." method="soundPresseNoir"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/HSlider2" to="." method="changeValueSFX"]
+[connection signal="pressed" from="TabContainer/Sound/VBoxContainer/PlaySound aaaaa" to="." method="soundPresse_aaaa"]

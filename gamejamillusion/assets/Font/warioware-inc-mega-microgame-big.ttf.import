@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dpy4juslko40f"
-path="res://.godot/imported/warioware-inc-mega-microgame-big.ttf-a7c223df8d407f01f015412811c0e3fe.fontdata"
+path="res://.godot/imported/warioware-inc-mega-microgame-big.ttf-a5cc9b8357119372217fefcca9e1e70c.fontdata"
 
 [deps]
 
-source_file="res://assets/Font/Wario Ware Fonts/warioware-inc-mega-microgame-big.ttf"
-dest_files=["res://.godot/imported/warioware-inc-mega-microgame-big.ttf-a7c223df8d407f01f015412811c0e3fe.fontdata"]
+source_file="res://assets/Font/warioware-inc-mega-microgame-big.ttf"
+dest_files=["res://.godot/imported/warioware-inc-mega-microgame-big.ttf-a5cc9b8357119372217fefcca9e1e70c.fontdata"]
 
 [params]
 
