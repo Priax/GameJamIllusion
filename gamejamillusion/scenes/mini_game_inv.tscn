@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://b8445jml2mwo1" path="res://assets/sprites/world_tileset.png" id="1_6x8er"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_376jq"]
-[ext_resource type="PackedScene" uid="uid://dq6j5ejs1xrsv" path="res://tempo/scenes/Player.tscn" id="1_j72u6"]
-[ext_resource type="PackedScene" uid="uid://chxlmbmg14k48" path="res://tempo/scenes/platform.tscn" id="3_xaj4u"]
+[ext_resource type="PackedScene" uid="uid://dq6j5ejs1xrsv" path="res://scenes/Player.tscn" id="1_j72u6"]
+[ext_resource type="PackedScene" uid="uid://chxlmbmg14k48" path="res://scenes/platform.tscn" id="3_xaj4u"]
 [ext_resource type="PackedScene" uid="uid://c6jfvm4u72mhl" path="res://scenes/kill_zone.tscn" id="4_5nac6"]
 [ext_resource type="FontFile" uid="uid://c01g8g7b3f2y6" path="res://assets/fonts/PixelOperator8.ttf" id="5_31aj8"]
-[ext_resource type="PackedScene" uid="uid://cqbone50ckqss" path="res://tempo/scenes/transition.tscn" id="7_oox2p"]
+[ext_resource type="PackedScene" uid="uid://cqbone50ckqss" path="res://scenes/transition.tscn" id="7_oox2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usclt"]
 texture = ExtResource("1_6x8er")
