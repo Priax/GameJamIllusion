@@ -774,7 +774,7 @@ debug_color = Color(1, 0, 0, 0.207843)
 position = Vector2(-223, -213)
 sprite_frames = SubResource("SpriteFrames_4arpq")
 animation = &"run"
-frame_progress = 0.660283
+frame_progress = 0.030106
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-223, -188)
@@ -805,7 +805,7 @@ position = Vector2(-385, -195)
 scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_103hw")
 autoplay = "default"
-frame_progress = 0.680782
+frame_progress = 0.134476
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2(-383, -194)
