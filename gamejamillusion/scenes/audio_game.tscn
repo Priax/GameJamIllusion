@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh8ogsu84lvpn"]
+
+[ext_resource type="Script" path="res://scripts/audio_game.gd" id="1_yb4qo"]
+[ext_resource type="AudioStream" uid="uid://bdlfjrqpvrlr4" path="res://assets/sounds/Axoloto - Zaly TKKF Laïoss.mp3" id="2_2qcsm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gaare"]
+font_size = 40
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwvqq"]
+font_size = 40
+font_color = Color(0, 0, 1, 1)
+
+[node name="AudioGame" type="Node2D"]
+script = ExtResource("1_yb4qo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2qcsm")
+
+[node name="test" type="Label" parent="."]
+offset_left = -72.0
+offset_top = -29.0
+offset_right = 90.0
+offset_bottom = 26.0
+text = "AUDIO"
+label_settings = SubResource("LabelSettings_gaare")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, 22)
+
+[node name="AudioTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = -544.0
+offset_top = -269.0
+offset_right = -503.0
+offset_bottom = -214.0
+label_settings = SubResource("LabelSettings_qwvqq")
