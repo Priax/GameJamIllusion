@@ -14,3 +14,9 @@ config/name="GameJamIllusion"
 run/main_scene="res://scenes/menu_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*res://scenes/transition.tscn"
+MenuScene="*res://scenes/menu_scene.tscn"
+OptionScene="*res://scenes/option_scene.gd"

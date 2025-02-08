@@ -1,12 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bded4mj88qet4"]
+[gd_scene load_steps=7 format=3 uid="uid://bded4mj88qet4"]
 
 [ext_resource type="Script" path="res://scenes/menu_scene.gd" id="1_so3y1"]
-[ext_resource type="Texture2D" uid="uid://dqaopmdo0vdrv" path="res://assets/BackGround/background_layer_1.png" id="2_pqotk"]
 [ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="3_o6ehx"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3k8n1"]
-texture = ExtResource("2_pqotk")
-modulate_color = Color(1, 1, 1, 0.431373)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dwkf"]
 
@@ -50,21 +45,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_so3y1")
-
-[node name="menuBackground" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -571.0
-offset_top = -326.0
-offset_right = 580.0
-offset_bottom = 321.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_3k8n1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

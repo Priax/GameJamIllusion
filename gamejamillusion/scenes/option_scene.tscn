@@ -52,22 +52,28 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
 theme_override_styles/panel = SubResource("StyleBoxTexture_hpbsf")
 tab_alignment = 1
-current_tab = 2
+current_tab = 0
 tab_focus_mode = 1
 
 [node name="Graphique" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
 tab_alignment = 1
 metadata/_tab_index = 0
 
 [node name="CheckFullScreen" type="CheckButton" parent="TabContainer/Graphique"]
-layout_mode = 0
-offset_left = 5.93018
-offset_top = 6.77746
-offset_right = 163.93
-offset_bottom = 59.7775
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -232.965
+offset_right = 136.0
+offset_bottom = -114.965
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
 theme_override_font_sizes/font_size = 16
 text = "FullScreen
@@ -106,10 +112,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -75.0824
-offset_top = -28.9543
-offset_right = 3.9176
-offset_bottom = 9.04572
+offset_left = -70.908
+offset_top = -19.7075
+offset_right = 17.092
+offset_bottom = 25.2925
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_6aa3i")
@@ -118,39 +124,30 @@ text = "Back
 "
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
 tab_alignment = 1
 metadata/_tab_index = 2
 
-[node name="BackButton" type="Button" parent="TabContainer/Sound"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -75.0824
-offset_top = -28.9543
-offset_right = 3.9176
-offset_bottom = 9.04572
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_6aa3i")
-theme_override_styles/normal = SubResource("StyleBoxTexture_pr2q2")
-text = "Back
-"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound"]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 29.0
-offset_right = 252.0
-offset_bottom = 82.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.5
+offset_top = -152.0
+offset_right = 195.5
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Music" type="Label" parent="TabContainer/Sound/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_font_sizes/font_size = 30
 text = "Music
 "
 
@@ -162,11 +159,13 @@ max_value = 0.0
 [node name="PlaySound noir" type="Button" parent="TabContainer/Sound/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_font_sizes/font_size = 25
 text = "Play Sound noir"
 
 [node name="SFX" type="Label" parent="TabContainer/Sound/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_font_sizes/font_size = 30
 text = "Sfx
 "
 
@@ -178,13 +177,32 @@ max_value = 0.0
 [node name="PlaySound aaaaa" type="Button" parent="TabContainer/Sound/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_font_sizes/font_size = 25
 text = "Play Sound aaaaaa"
+
+[node name="BackButton" type="Button" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.908
+offset_top = -19.7075
+offset_right = 17.092
+offset_bottom = 25.2925
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_6aa3i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pr2q2")
+text = "Back
+"
 
 [connection signal="toggled" from="TabContainer/Graphique/CheckFullScreen" to="." method="checkFullScreen"]
 [connection signal="pressed" from="TabContainer/Graphique/BackButton" to="." method="BackPresse"]
 [connection signal="pressed" from="TabContainer/Controle/BackButton" to="." method="BackPresse"]
-[connection signal="pressed" from="TabContainer/Sound/BackButton" to="." method="BackPresse"]
 [connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/HSlider" to="." method="changeValueMaster"]
 [connection signal="pressed" from="TabContainer/Sound/VBoxContainer/PlaySound noir" to="." method="soundPresseNoir"]
 [connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/HSlider2" to="." method="changeValueSFX"]
 [connection signal="pressed" from="TabContainer/Sound/VBoxContainer/PlaySound aaaaa" to="." method="soundPresse_aaaa"]
+[connection signal="pressed" from="TabContainer/Sound/BackButton" to="." method="BackPresse"]
