@@ -3,6 +3,11 @@ extends Node2D
 @onready var audio_player : AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var timer : Timer = $AudioTimer
 @onready var score_label : Label = $Score
+@onready var dance1 : AnimatedSprite2D = $Dance1/AnimatedSprite2D
+@onready var dance2 : AnimatedSprite2D = $Dance2/AnimatedSprite2D
+@onready var dance3 : AnimatedSprite2D = $Dance3/AnimatedSprite2D
+@onready var dance4 : AnimatedSprite2D = $Dance4/AnimatedSprite2D
+@onready var dance5 : AnimatedSprite2D = $Dance5/AnimatedSprite2D
 
 var direction : Vector2 = Vector2(1, 0)
 var speed : float = 1000
@@ -21,6 +26,7 @@ var win : bool = false
 func _ready() -> void:
 	load_sounds_from_directory("res://assets/audiogame/")
 	setup_sound()
+	setup_dance()
 
 func _process(delta : float) -> void:
 	if game_over:
@@ -28,6 +34,13 @@ func _process(delta : float) -> void:
 	update_sound_position(delta)
 	update_player()
 	update_score_display()
+
+func setup_dance() -> void:
+	dance1.play("default")
+	dance2.play("default")
+	dance3.play("default")
+	dance4.play("default")
+	dance5.play("default")
 
 func update_player() -> void:
 	if (Input.is_action_just_pressed("ui_select")) and !game_over:
