@@ -177,4 +177,9 @@ theme_override_fonts/font = ExtResource("1_66yiq")
 theme_override_font_sizes/font_size = 16
 text = "Take damage"
 
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 3.0
+autostart = true
+
 [connection signal="pressed" from="GameManager/Button" to="GameManager/FinalScore" method="_on_button_pressed"]
+[connection signal="timeout" from="GameManager/Timer" to="." method="_on_timer_timeout"]

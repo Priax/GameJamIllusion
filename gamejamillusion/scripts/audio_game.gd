@@ -81,6 +81,11 @@ func _next_sound() -> void :
 func _end_game(win : bool) -> void :
 	game_over = true
 	print("status : " + str(win) + ", score: " + str(score))
+	if win:
+		Points.points += 1
+	else:
+		Points.is_win = false
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func load_sounds_from_directory(directory_path: String) -> void:
 	var dir : DirAccess = DirAccess.open(directory_path)

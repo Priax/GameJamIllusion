@@ -24,7 +24,8 @@ func _process(delta : float) -> void :
 
 func timer_faded_out() -> void:
 	ingame = false
-	print("Timer faded out... game lost !")
+	Points.is_win = false
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func update_player_position(delta : float) -> void :
 	var direction : Vector2 = Vector2.ZERO
@@ -63,7 +64,9 @@ func move_player_with_collision(direction : Vector2, delta : float) -> void :
 				player.position.y = y
 			"Portal":
 				ingame = false
-				print("Portal taken, game won !!!")
+				Points.points += 1
+				get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+				
 			_:
 				if direction.x != 0:
 					player.position.x -= velocity.x
