@@ -1,6 +1,8 @@
 extends Node
 
 @onready var timer: Timer = $"../Timer"
+@onready var win_sound: AudioStreamPlayer2D = $"../win_sound"
+@onready var loose_sound: AudioStreamPlayer2D = $"../loose_sound"
 
 var points_game_final: Label
 var hearts_list: Array[TextureRect]
@@ -33,6 +35,9 @@ func _ready():
 	# Si le joueur a perdu, lui faire perdre une vie
 	if not Points.is_win:
 		take_damage()
+		loose_sound.play()
+	else:
+		win_sound.play()
 	update_heart_display()
 
 func take_damage():

@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://u0jhem0uhrw4"]
+[gd_scene load_steps=15 format=3 uid="uid://u0jhem0uhrw4"]
 
 [ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="1_tcr4x"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="2_kbnn3"]
 [ext_resource type="Texture2D" uid="uid://7dqjx4pcacfc" path="res://assets/sprites/heart-pulse.png" id="3_ep5yh"]
 [ext_resource type="Texture2D" uid="uid://c7mtojpr6ovd7" path="res://assets/sprites/stargazing.jpg" id="4_7be23"]
+[ext_resource type="AudioStream" uid="uid://ccpqk0ixrpwka" path="res://assets/sounds/coin.wav" id="4_vfsq8"]
+[ext_resource type="AudioStream" uid="uid://br47wwunlxif1" path="res://assets/sounds/explosion.wav" id="5_6vcnn"]
 
 [sub_resource type="GDScript" id="GDScript_tgg87"]
 
@@ -130,6 +132,12 @@ autoplay = "heart_animation"
 [node name="Timer" type="Timer" parent="GameManager"]
 wait_time = 3.0
 autostart = true
+
+[node name="win_sound" type="AudioStreamPlayer2D" parent="GameManager"]
+stream = ExtResource("4_vfsq8")
+
+[node name="loose_sound" type="AudioStreamPlayer2D" parent="GameManager"]
+stream = ExtResource("5_6vcnn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(964.5, 537.5)
