@@ -11,11 +11,14 @@ config_version=5
 [application]
 
 config/name="GameJamIllusion"
-run/main_scene="res://scenes/game_over.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+
+run/main_scene="res://scenes/menu_scene.tscn"
 
 [autoload]
+
+Transition="*res://scenes/transition.tscn"
+MenuScene="*res://scenes/menu_scene.tscn"
+OptionScene="*res://scenes/option_scene.gd"
 
 Points="*res://scripts/Points.gd"
 
