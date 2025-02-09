@@ -4,16 +4,22 @@ extends Node
 
 var points_game_final: Label
 var hearts_list: Array[TextureRect]
-var game_list: Array[String]
+var game_list: Array[String] = [
+	"res://scenes/minigame_audio.tscn",
+	"res://scenes/minigame_infini.tscn",
+	"res://scenes/minigame_invisible.tscn"
+]
 
 func exec_game() -> void :
+	if game_list.size() == 0:
+		print("pa2jeu noob")
+		return
 	var index : int = randi() % game_list.size()
 	var random_game : String = game_list[index]
 	get_tree().change_scene_to_file(random_game)
 
 func _ready():
 	timer.timeout.connect(exec_game)
-	load_games()
 	# Afficher le score
 	points_game_final = %FinalScore
 	var points = Points.points
@@ -43,17 +49,3 @@ func update_heart_display():
 func _on_button_pressed() -> void:
 	take_damage()
 	print(Points.health)
-
-func load_games() -> void:
-	var path : String = "res://scenes/"
-	var dir : DirAccess = DirAccess.open(path)
-	if dir == null:
-		print("erreur dossier")
-		return
-	dir.list_dir_begin()
-	var file_name : String = dir.get_next()
-	while file_name != "":
-		if file_name.begins_with("minigame_") and file_name.ends_with(".tscn"):
-			game_list.append(path + file_name)
-		file_name = dir.get_next()
-	dir.list_dir_end()
