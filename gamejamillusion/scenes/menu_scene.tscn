@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bded4mj88qet4"]
+[gd_scene load_steps=7 format=3 uid="uid://75qsvroenv1t"]
 
 [ext_resource type="Script" path="res://scenes/menu_scene.gd" id="1_so3y1"]
 [ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="3_o6ehx"]

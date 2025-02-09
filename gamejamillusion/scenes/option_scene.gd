@@ -20,7 +20,6 @@ func changeValueMaster(value: float) -> void:
 	else:
 		AudioServer.set_bus_mute(master_bus, false)
 
-
 func changeValueSFX(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus, value)
 	

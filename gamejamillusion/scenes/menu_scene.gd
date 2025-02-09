@@ -1,7 +1,8 @@
 extends Control
 
 func startPressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu_scene.tscn")
+	$"/root/MenuScene".hide()
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func optionPressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/option_scene.tscn")
