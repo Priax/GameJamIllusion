@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://7mm73mclifgd"]
+[gd_scene load_steps=81 format=3 uid="uid://7mm73mclifgd"]
 
 [ext_resource type="Script" path="res://scripts/audio_game.gd" id="1_yb4qo"]
 [ext_resource type="Texture2D" uid="uid://ds2kuspusnqwn" path="res://assets/sprites/B1013-3.png" id="2_y1xkf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bv1mbqvu370gy" path="res://assets/sprites/dance/skip.png" id="5_gkcii"]
 [ext_resource type="Texture2D" uid="uid://dmg754iybokqe" path="res://assets/sprites/dance/slide.png" id="6_5w0r7"]
 [ext_resource type="Texture2D" uid="uid://p4pgetc6s82u" path="res://assets/sprites/dance/snap.png" id="7_r7es2"]
+[ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="8_wbox7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gaare"]
 font_size = 40
@@ -581,9 +582,10 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_d8jvm")
 
 [node name="Txt" type="Label" parent="."]
-offset_left = -149.0
+offset_left = -171.0
 offset_top = -300.0
-offset_right = 159.0
-offset_bottom = -231.0
+offset_right = 218.0
+offset_bottom = -221.0
+theme_override_fonts/font = ExtResource("8_wbox7")
 text = "Press space !"
 label_settings = SubResource("LabelSettings_2sf3x")

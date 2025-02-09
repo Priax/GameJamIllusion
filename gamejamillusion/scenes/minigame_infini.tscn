@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4jd1p0k412k7" path="res://assets/sprites/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="3_psb38"]
 [ext_resource type="Texture2D" uid="uid://bpx4klcy2rkcc" path="res://assets/sprites/FREE_Samurai 2D Pixel Art v1.2/Sprites/RUN.png" id="5_8ehfh"]
 [ext_resource type="Texture2D" uid="uid://q35h4xa6jd2q" path="res://assets/sprites/Dimensional_Portal.png" id="6_l0yo0"]
-[ext_resource type="FontFile" uid="uid://c01g8g7b3f2y6" path="res://assets/fonts/PixelOperator8.ttf" id="6_uk3ib"]
+[ext_resource type="FontFile" uid="uid://dpy4juslko40f" path="res://assets/Font/warioware-inc-mega-microgame-big.ttf" id="6_x20bv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47qmj"]
 texture = ExtResource("1_p20v1")
@@ -790,7 +790,7 @@ offset_left = -237.0
 offset_top = -124.0
 offset_right = 227.0
 offset_bottom = -101.0
-theme_override_fonts/font = ExtResource("6_uk3ib")
+theme_override_fonts/font = ExtResource("6_x20bv")
 label_settings = SubResource("LabelSettings_br73u")
 
 [node name="TP" type="StaticBody2D" parent="."]
