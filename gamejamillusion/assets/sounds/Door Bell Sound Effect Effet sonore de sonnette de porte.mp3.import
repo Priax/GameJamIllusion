@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkx4pccde6phe"
+path="res://.godot/imported/Door Bell Sound Effect Effet sonore de sonnette de porte.mp3-2e55aacb4a43f50ffad0d487065d59d2.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Door Bell Sound Effect Effet sonore de sonnette de porte.mp3"
+dest_files=["res://.godot/imported/Door Bell Sound Effect Effet sonore de sonnette de porte.mp3-2e55aacb4a43f50ffad0d487065d59d2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
